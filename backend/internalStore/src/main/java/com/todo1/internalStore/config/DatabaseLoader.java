@@ -1,5 +1,6 @@
 package com.todo1.internalStore.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +10,9 @@ import com.todo1.internalStore.entity.Product;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
+    @Autowired
     public DatabaseLoader(ProductRepository repository){
         this.productRepository = repository;
     }
